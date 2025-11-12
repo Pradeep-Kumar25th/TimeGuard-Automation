@@ -1,0 +1,424 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Helvetica Font Family */
+@layer base {
+  * {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-weight: 700;
+  }
+}
+
+@layer base {
+  :root {
+    /* Base colors */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 21%; /* Dark Gray #363636 */
+    
+    /* Card colors */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 21%;
+    
+    /* Popover colors */
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 21%;
+    
+    /* Primary - Teal/Blue-Green #437A8B */
+    --primary: 196 38% 42%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - Light Gray #E3E3E3 */
+    --secondary: 0 0% 89%;
+    --secondary-foreground: 0 0% 21%;
+    
+    /* Muted - Medium Gray #808080 */
+    --muted: 0 0% 50%;
+    --muted-foreground: 0 0% 21%;
+    
+    /* Accent - Yellow #FFC000 */
+    --accent: 47 100% 50%;
+    --accent-foreground: 0 0% 21%;
+    
+    /* Destructive - Red #CC112F */
+    --destructive: 351 85% 45%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Border - Light Gray #E3E3E3 */
+    --border: 0 0% 89%;
+    
+    /* Input - Light Gray #E3E3E3 */
+    --input: 0 0% 89%;
+    
+    /* Ring - Teal/Blue-Green #437A8B */
+    --ring: 196 38% 42%;
+    
+    /* Radius */
+    --radius: 0.5rem;
+    
+    /* Theme colors - Custom palette */
+    --teal: 196 38% 42%; /* #437A8B */
+    --teal-dark: 196 38% 33%; /* #237690 */
+    --red: 351 85% 45%; /* #CC112F */
+    --dark-gray: 0 0% 21%; /* #363636 */
+    --yellow: 47 100% 50%; /* #FFC000 */
+    --medium-gray: 0 0% 50%; /* #808080 */
+    --light-gray: 0 0% 89%; /* #E3E3E3 */
+  }
+
+  .dark {
+    /* Base colors */
+    --background: 0 0% 21%; /* Dark Gray #363636 */
+    --foreground: 0 0% 100%;
+    
+    /* Card colors */
+    --card: 0 0% 25%;
+    --card-foreground: 0 0% 100%;
+    
+    /* Popover colors */
+    --popover: 0 0% 25%;
+    --popover-foreground: 0 0% 100%;
+    
+    /* Primary - Teal/Blue-Green #437A8B */
+    --primary: 196 38% 42%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - Dark Gray variant */
+    --secondary: 0 0% 30%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Muted - Medium Gray #808080 */
+    --muted: 0 0% 50%;
+    --muted-foreground: 0 0% 80%;
+    
+    /* Accent - Yellow #FFC000 */
+    --accent: 47 100% 50%;
+    --accent-foreground: 0 0% 21%;
+    
+    /* Destructive - Red #CC112F */
+    --destructive: 351 85% 45%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Border - Medium Gray #808080 */
+    --border: 0 0% 50%;
+    
+    /* Input - Medium Gray #808080 */
+    --input: 0 0% 50%;
+    
+    /* Ring - Teal/Blue-Green #437A8B */
+    --ring: 196 38% 42%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+  }
+}
+
+/* Navbar CTA Gradient - Red to Dark Teal */
+@layer utilities {
+  .navbar-cta-gradient {
+    background: linear-gradient(90deg, #CC112F 0%, #237690 100%);
+  }
+  
+  .navbar-cta-gradient:hover {
+    background: linear-gradient(90deg, #B00F29 0%, #1F6780 100%);
+  }
+}
+
+/* Custom scrollbar - Using theme colors */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E3E3E3; /* Light Gray */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #808080; /* Medium Gray */
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #437A8B; /* Teal */
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-track {
+  background: #363636; /* Dark Gray */
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #808080; /* Medium Gray */
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #437A8B; /* Teal */
+}
+
+/* Animation classes */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Enterprise UI enhancements */
+.enterprise-card {
+  @apply bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700;
+}
+
+.enterprise-button {
+  @apply px-4 py-2 rounded-md font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.enterprise-input {
+  @apply w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+}
+
+/* Chart container */
+.chart-container {
+  @apply w-full h-64 flex items-center justify-center;
+}
+
+/* Notification styles */
+.notification-item {
+  @apply p-4 border-l-4 border-yellow-400 bg-yellow-50 dark:bg-yellow-900/20 dark:border-yellow-500;
+}
+
+.notification-item.error {
+  @apply border-red-400 bg-red-50 dark:bg-red-900/20 dark:border-red-500;
+}
+
+.notification-item.success {
+  @apply border-green-400 bg-green-50 dark:bg-green-900/20 dark:border-green-500;
+}
+
+/* AI Chat styles */
+.ai-chat-container {
+  @apply flex flex-col h-full bg-white dark:bg-gray-800;
+}
+
+.ai-message {
+  @apply p-3 rounded-lg mb-2 max-w-xs;
+}
+
+.ai-message.user {
+  @apply text-white ml-auto;
+  background: linear-gradient(90deg, #CC112F 0%, #237690 100%); /* Navbar CTA Gradient */
+}
+
+.ai-message.assistant {
+  background: #E3E3E3; /* Light Gray */
+  @apply dark:bg-gray-700 text-gray-900 dark:text-gray-100 mr-auto;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  @apply animate-spin rounded-full h-6 w-6 border-b-2;
+  border-color: #437A8B; /* Teal */
+}
+
+/* Status badges */
+.status-badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+.status-badge.active {
+  background: #437A8B; /* Teal */
+  @apply text-white;
+}
+
+.status-badge.bench {
+  background: #FFC000; /* Yellow */
+  @apply text-gray-900;
+}
+
+.status-badge.defaulter {
+  background: #CC112F; /* Red */
+  @apply text-white;
+}
+
+.status-badge.pending {
+  background: #808080; /* Medium Gray */
+  @apply text-white;
+}
+
+/* Additional utility classes for better styling */
+.text-gradient {
+  background: linear-gradient(135deg, #CC112F 0%, #237690 100%); /* Red to Dark Teal */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-effect {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Ensure proper spacing and layout */
+.space-y-6 > * + * {
+  margin-top: 1.5rem;
+}
+
+.space-y-4 > * + * {
+  margin-top: 1rem;
+}
+
+.space-y-2 > * + * {
+  margin-top: 0.5rem;
+}
+
+/* Fix for potential layout issues */
+.flex {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+/* Grid layouts */
+.grid {
+  display: grid;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
+/* Responsive design */
+@media (min-width: 768px) {
+  .md\\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  
+  .md\\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  
+  .md\\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  
+  .lg\\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  
+  .lg\\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+
+
+
+
