@@ -46,11 +46,6 @@ npm run dev
 ## 📚 Documentation
 
 - **Setup Instructions**: `SETUP_INSTRUCTIONS.md` ⭐ **START HERE**
-- **Deployment Guide**: `DEPLOYMENT_HANDOVER_GUIDE.md`
-- **Code Review Guide**: `CODE_REVIEW_QUICK_REFERENCE.md`
-- **Architecture**: `ENTERPRISE_REFACTORING_SUMMARY.md`
-- **Handover Checklist**: `HANDOVER_CHECKLIST.md`
-- **GitHub Setup**: `GITHUB_REPOSITORY_SETUP_GUIDE.md`
 
 ## 🏗️ Architecture
 
@@ -123,7 +118,7 @@ npm run lint
 
 ## 📦 Deployment
 
-See `DEPLOYMENT_HANDOVER_GUIDE.md` for complete Azure deployment instructions.
+For Azure deployment, refer to Azure App Service documentation or contact your DevOps team.
 
 ## 🐛 Troubleshooting
 
